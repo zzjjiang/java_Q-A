@@ -1,0 +1,10 @@
+把对象和变量分开说明，否则容易产生误解。以下都是64位环境下。
+针对对象：
+压缩状态：MarkWord 8+klass 4+数据0+对齐4=16
+非压缩状态：MarkWord 8+klass 8+数据0+对齐0=16
+
+针对变量：
+压缩状态：4
+非压缩状态：8
+
+https://www.cnblogs.com/maxigang/p/9040088.html java对象结构
