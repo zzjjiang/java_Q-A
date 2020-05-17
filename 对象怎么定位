@@ -1,0 +1,5 @@
+句柄池、直接指针。
+HotspotVM使用的是直接指针的定位方式。
+
+https://blog.csdn.net/clover_lily/article/details/80095580
+https://blog.csdn.net/itcats_cn/article/details/80951929
