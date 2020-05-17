@@ -1,0 +1,14 @@
+jdk1.8下的hashmap采用的是尾插法，不会有链表成环的问题。jdk1.7下采用的头插法，会有链表成环的问题。
+
+hashmap成环原因的代码出现在transfer代码中，也就是扩容之后的数据迁移部分
+
+解释一下transfer的过程：
+首先获取新表的长度，之后遍历新表的每一个entry，然后每个ertry中的链表，以反转的形式，形成rehash之后的链表。
+
+并发问题：
+若当前线程此时获得ertry节点，但是被线程中断无法继续执行，此时线程二进入transfer函数，并把函数顺利执行，此时新表中的某个位置有了节点，之后线程一获得执行权继续执行，因为并发transfer，所以两者都是扩容的同一个链表，当线程一执行到e.next = new table[i] 的时候，由于线程二之前数据迁移的原因导致此时new table[i] 上就有ertry存在，所以线程一执行的时候，会将next节点，设置为自己，导致自己互相使用next引用对方，因此产生链表，导致死循环。
+https://blog.csdn.net/qq_32182461/article/details/81152025
+
+https://blog.csdn.net/insomsia/article/details/93882739?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1
+
+http://www.imooc.com/article/details/id/292265
