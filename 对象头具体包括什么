@@ -1,0 +1,16 @@
+标类长（对象头：markword标记字、klass类型指针、数组长度（仅限于数组））
+
+无偏轻重G（锁状态：无锁、偏向锁、轻量级锁、重量级锁、GC标记）
+
+未哈未年标，25 31 1 （64位无锁情况：未使用25、hashcode31、未使用1、年龄4、偏向标志1）
+线时未年标，54和2 1（64位偏向锁情况：线程id54、偏向时间戳2、未使用1、年龄4、偏向标志1）
+
+哈年标25 （32位无锁情况：hashcode25、年龄4、偏向标志1）
+线时年标23 2 （32位偏向锁情况：线程id23、偏向时间戳2、年龄4、偏向标志1）
+
+https://www.cnblogs.com/makai/p/12466541.html
+https://blog.csdn.net/lkforce/article/details/81128115
+
+https://blog.csdn.net/qq_26542493/article/details/90938070
+
+https://www.jianshu.com/p/3d38cba67f8b
