@@ -1,0 +1,17 @@
+对大长动空（堆内存分配策略：对象优先在Eden分配，大对象直接进入老年代，长期存活的对象将进入老年代，动态对象年龄判定，空间分配担保）
+
+Java对象分配的过程
+1.编译器通过逃逸分析，确定对象是在栈上分配还是在堆上分配。如果是在堆上分配，则进入选项2.
+2.如果tlab_top + size <= tlab_end，则在在TLAB上直接分配对象并增加tlab_top 的值，如果现有的TLAB不足以存放当前对象则3.
+3.重新申请一个TLAB，并再次尝试存放当前对象。如果放不下，则4.
+4.在Eden区加锁（这个区是多线程共享的），如果eden_top + size <= eden_end则将对象存放在Eden区，增加eden_top 的值，如果Eden区不足以存放，则5.
+5.执行一次Young GC（minor collection）。
+6.经过Young GC之后，如果Eden区任然不足以存放当前对象，则直接分配到老年代。
+
+https://www.cnblogs.com/linxiong/p/4527865.html
+
+https://www.baidu.com/link?url=LkIt0opz1vVNTLIvhMhj4rKLPDGkUcaapILyhdEkn3UTI9S-aoIZ_WEjLpe53vUQlXu1v6X_XARLmmG_NpN-j3vCvhZgHu7uRnP1_vQHZEy&wd=&eqid=de7238e20000f8c0000000045eb2abf8
+
+https://blog.csdn.net/yangzl2008/article/details/43202969?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-1
+
+https://www.baidu.com/link?url=uNt4thryR6TbN0cXJiVkFNCG9SoTYRtI0BeOdOHcjuOsoZxNApcy7nwoOWgpb3O-dBBPIIEDUi14xZjfY0IDTa&wd=&eqid=de7238e20000f8c0000000045eb2abf8
