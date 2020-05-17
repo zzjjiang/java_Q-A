@@ -1,0 +1,6 @@
+头实填 （存储布局：对象头、实例数据、对齐填充）
+标类长（对象头：markword标记字、klass类型指针、数组长度（仅限于数组））
+
+https://www.jianshu.com/p/12a3c97dc2b7
+
+https://blog.csdn.net/geloin/article/details/82916939
