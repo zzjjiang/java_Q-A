@@ -1,0 +1,5 @@
+调用一次和多次，对资源产生影响是相同的。
+
+https://www.jianshu.com/p/9d46a730284e 什么是幂等性
+https://www.solves.com.cn/it/cxkf/bk/2019-09-24/5233.html ;接口幂等性这么重要，它是什么？怎么实现？
+https://www.bilibili.com/video/BV1S4411v7CF?from=search&seid=15487131920499078969 ;   什么是幂等性？
