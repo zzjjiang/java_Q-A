@@ -1,0 +1,8 @@
+停机迁移、双写迁移
+
+https://www.bilibili.com/video/BV1zE411d7YV?from=search&seid=9727352776657311109 ;   48_你们当时是如何把系统不停机迁移到分库分表的？
+https://blog.csdn.net/ff00yo/article/details/89247706 ;   面试官问：分库分表后，你们是怎么迁移和部署上线的？怎么保证一致性？
+
+https://www.cnblogs.com/myseries/p/11268574.html ;   分库分表？如何做到永不迁移数据和避免热点？ (转)
+https://www.jianshu.com/p/e81573024064 ;   分库分表之数据迁移
+https://www.baidu.com/link?url=zaDgwp0hBIIkW-34KMoneU1fxI9JnzVWoiLLCADQEXejqGlykJRA7LtXVlhQFlO9&wd=&eqid=d3bd40ce00196ff9000000035ec52871 ;   不停机分库分表迁移
