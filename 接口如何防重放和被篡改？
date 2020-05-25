@@ -1,0 +1,6 @@
+防重放：幂等性，url里添加唯一标识参数
+防篡改：url里添加签名参数
+
+https://www.jianshu.com/p/de9295087560 Api 接口安全-防篡改,防重放理解总结
+https://blog.csdn.net/oYiMiYangGuang123/article/details/81773912  API接口防止参数篡改和重放攻击
+https://learnku.com/articles/4196/talk-about-the-anti-replay-mechanism-of-api   说说 API 的防重放机制
